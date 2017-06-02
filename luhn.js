@@ -47,44 +47,6 @@ var sumDigits = function (str) {
   return sumArray(digits);
 }
 
-var methodOne = function(digits, check) {
-
-  var sumDigits = sumArray(digits);
-  sumDigits *= 9;
-  var lastDigit = String(sumDigits).slice(String(sumDigits).length - 1);
-
-  var doesItPass = (check == lastDigit);
-
-  console.log(`Method One:`);
-  console.log(`Sum of non-check digits: ${sumDigits}`)
-  console.log(`Check Digit: ${check}`)
-
-  if (doesItPass) {
-    console.log(`This number passes the Luhn test according to the first method.`)
-  } else {
-    console.log(`This number DOES NOT pass the Luhn test according to the first method.`)
-  }
-  //return doesItPass;
-}
-
-var methodTwo = function (digits, check) {
-  var sumDigits = sumArray(digits);
-  var lastDigit = String(sumDigits).slice(String(sumDigits).length - 1);
-  lastDigit = 10 - lastDigit;
-
-  var doesItPass = (check == lastDigit);
-
-  console.log(`Method Two:`);
-  console.log(`Sum of non-check digits: ${sumDigits}`)
-  console.log(`Check Digit: ${check}`)
-
-  if (doesItPass) {
-    console.log(`This number passes the Luhn test according to the second method.`)
-  } else {
-    console.log(`This number DOES NOT pass the Luhn test according to the second method.`)
-  }
-
-}
 
 function sumArray(myArray) {
   var sum = 0;
